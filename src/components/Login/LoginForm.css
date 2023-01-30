@@ -1,0 +1,44 @@
+form {
+  margin-left: 20rem; 
+  margin-top: 8rem;
+}
+
+input {
+  width: 40%;
+  margin: 1rem; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  padding: 0.8rem; 
+  border-radius: 0.9rem;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  background-color: #4F3683; 
+  color: white;
+  width: 7%;
+  padding: 0.5rem;
+  border-radius: 7px;
+  border: none;
+}
+
+/* .hr-login {
+  margin-left: 20rem;
+  margin-top: 3rem;
+  width: 40%;
+}
+
+.sign-up-redirect {
+  margin-left: 23rem;
+  color: black;
+}
+
+.sign-up-redirect-btn {
+  background-color: #FDF0F5; 
+  color: #4F3683; 
+  padding: 15px; 
+  border: none;
+  margin-left: 1rem;
+  border-radius: 10px;
+} */
