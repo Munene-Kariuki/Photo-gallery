@@ -1,12 +1,13 @@
 .home{
   margin-left: 2rem;
-  height: 100vh;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  margin-right: 2rem;
+  margin-right: 13rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .login {
@@ -18,9 +19,8 @@
 }
 
 .AppLogo {
-  height: 10vmin;
+  height: 6vmin;
   pointer-events: none;
-  margin-top: 2rem;
 }
 
 .landing-page {
