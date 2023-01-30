@@ -1,0 +1,72 @@
+.home{
+  margin-left: 2rem;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.login {
+  padding: 1rem;
+  background-color: #4F3683; 
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+
+.AppLogo {
+  height: 10vmin;
+  pointer-events: none;
+  margin-top: 2rem;
+}
+
+.landing-page {
+  display: flex;
+}
+
+.app-desc {
+  margin-left: 5rem;
+  width: 55%;
+}
+
+.app-desc > h1 {
+  font-size: 5rem;
+}
+
+.contact {
+  padding: 1.2rem;
+  border: none;
+  transition: 2s;
+  background-color: green;
+  color: white;
+}
+
+.contact:hover {
+  background-color: blue;
+  color: white;
+}
+
+.best-images {
+  margin-top: 7rem;
+}
+
+.images {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-img {
+  height: 25vmin;
+  width: 30%;
+}
+
+.landingpage-img {
+  height: 85vmin;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  width: 35%;
+}
