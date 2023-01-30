@@ -3,17 +3,29 @@ import './App.css';
 import Home from './components/HomeS/Home';
 import { Routes, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import Users from './components/UsersList/Users';
+import { useNavigate } from "react-router-dom";
 
 function App() {
 
-  const [user, setuser] = useState({});
+  const [user, setUser] = useState({});
+
+  const navigate = useNavigate()
 
   function handleCallBackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
     let userObject = jwtDecode(response.credential);
     console.log(userObject)
-    setuser(userObject)
+    setUser(userObject)
+    navigate('/home')
+    document.getElementById('signInDiv').hidden = true;
   };
+
+  function handleSignOut() {
+    setUser({})
+    navigate('/')
+    document.getElementById('signInDiv').hidden = false;
+  }
 
 
   useEffect(() => {
@@ -27,6 +39,8 @@ function App() {
       document.getElementById("signInDiv"),
       { theme: "outline", size: "large" }
     )
+
+    google.accounts.id.prompt();
     
   }, []);
 
@@ -36,7 +50,10 @@ function App() {
 
   return (
     <div>
-       <Home />
+       <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
+       </Routes>
     </div>
   );
 }
