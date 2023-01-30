@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import User from './User';
+import './user.css';
 
 function Users({user, handleSignOut}) {
 
-  const navigate = useNavigate()
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch('https://jsonplaceholder.typicode.com/users');
+      const json = await data.json();
+  
+      // set state with the result
+      setUsers(json);
+    }
+  
+    //catch any errors
+    fetchData()
+      .catch(console.error);;
+  }, []);
+
+  console.log(users)
+
+  const renderUsers = users.map((user) => {
+    return <User key={user.id} user={user} />
+  })
 
   return (
     <div>
-      <img src={user.picture} />
-      <h3>{user.name}</h3>
-      <button onClick={handleSignOut}>Sign out</button>
+      <button onClick={handleSignOut} className='sign-out'>Sign out</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Number of albums</th>
+          </tr>
+          {renderUsers}
+        </thead>
+      </table>
     </div>
   )
 }
