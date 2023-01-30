@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import './Home.css'
 
-function Home() {
+function Home({handleSignOut}) {
 
   return (
     <div className='home'>

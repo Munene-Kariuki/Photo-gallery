@@ -18,13 +18,11 @@ function App() {
     console.log(userObject)
     setUser(userObject)
     navigate('/home')
-    document.getElementById('signInDiv').hidden = true;
   };
 
   function handleSignOut() {
     setUser({})
     navigate('/')
-    document.getElementById('signInDiv').hidden = false;
   }
 
 
@@ -40,9 +38,9 @@ function App() {
       { theme: "outline", size: "large" }
     )
 
-    google.accounts.id.prompt();
+    // google.accounts.id.prompt();
     
-  }, []);
+  }, [user]);
 
   //if we have no user we show the: sign in btn
 
@@ -51,7 +49,7 @@ function App() {
   return (
     <div>
        <Routes>
-        <Route path='/' exact element={<Home />} />
+        <Route path='/' exact element={<Home handleSignOut={handleSignOut} />} />
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
        </Routes>
     </div>
