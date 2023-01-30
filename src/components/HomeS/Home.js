@@ -1,20 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Home.css'
 import { useNavigate } from "react-router-dom";
 
 function Home() {
 
-  const navigate = useNavigate();
-  //Navigate to login page
-  function handleClick() {
-    navigate('/login')
-  }
-
   return (
     <div className='home'>
       <div className='header'>
         <img src='https://parspng.com/wp-content/uploads/2022/10/camerapng.parspng.com-2.png' className='AppLogo' alt='Logo'  />
-        <button className='login' onClick={handleClick} >Log in</button>
+        <div id='signInDiv'></div>
       </div>
       <div className='landing-page'>
         <div className='app-desc'>
