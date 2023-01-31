@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import Users from './components/UsersList/Users';
 import { useNavigate } from "react-router-dom";
+import Albums from './components/Albums/Albums';
 
 function App() {
 
@@ -42,15 +43,14 @@ function App() {
     
   }, [user]);
 
-  //if we have no user we show the: sign in btn
-
-  //if we have a user show the: log out btn
+  console.log(user)
 
   return (
     <div>
        <Routes>
         <Route path='/' exact element={<Home handleSignOut={handleSignOut} />} />
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
+        <Route path='/user/:id' element={<Albums />} />
        </Routes>
     </div>
   );
