@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Album.css';
 
-function UserAlbums(props) {
+function UserAlbums() {
 
   const [selectedUser, setSelectedUser] = useState({});
   const [userAlbums, setUserAlbums] = useState([]);
+
+  const navigate = useNavigate();
 
   //get state to get selected user id
   const {state} = useLocation();
@@ -42,14 +44,18 @@ function UserAlbums(props) {
       .catch(console.error);;
   }, []);
 
-  //Redirect to album page
-  function handleAlbumRedirect() {
-    
-  }
 
   //Render list of albums
   const albumsList = userAlbums.map((userAlbum) => {
-    return <li className='list' key={userAlbum.id} onClick={handleAlbumRedirect} >{userAlbum.title}</li>
+    return <li 
+    className='list' 
+    key={userAlbum.id} 
+    onClick={() => navigate(`/album/${userAlbum.id}`, {
+      state: {
+        id: userAlbum.id
+      }
+    })} 
+    >{userAlbum.title}</li>
   })
 
   return (

@@ -5,3 +5,8 @@
 .list {
   margin-bottom: 2%;
 }
+
+.list:hover {
+  cursor: pointer;
+  color: gold;
+}

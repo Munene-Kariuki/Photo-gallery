@@ -6,6 +6,7 @@ import jwtDecode from 'jwt-decode';
 import Users from './components/UsersList/Users';
 import { useNavigate } from "react-router-dom";
 import UserAlbums from './components/UserAlbums/UserAlbums';
+import Album from './components/Album/Album';
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
         <Route path='/' exact element={<Home handleSignOut={handleSignOut} />} />
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
         <Route path='/user/:id' element={<UserAlbums />} />
+        <Route path='/album/:id' element={<Album />} />
        </Routes>
     </div>
   );

@@ -1,0 +1,18 @@
+.card {
+  width: 7.8%;
+  border: solid gray 1px;
+  margin: 2%;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card > p {
+  margin: 5%;
+}
+
+.header {
+  margin-left: 2%;
+}
