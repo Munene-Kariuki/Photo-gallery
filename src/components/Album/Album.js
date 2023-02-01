@@ -45,7 +45,7 @@ function Album() {
     return <Photo key={albumPhoto.id} photo={albumPhoto} />
   });
 
-  //Render books in rows of 7
+  //Render photos in rows of 8
   //Mutates displaybooks into arrays of groups of 3
   function displayPhotos() {
     let arr = []

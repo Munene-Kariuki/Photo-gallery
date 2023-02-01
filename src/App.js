@@ -7,6 +7,7 @@ import Users from './components/UsersList/Users';
 import { useNavigate } from "react-router-dom";
 import UserAlbums from './components/UserAlbums/UserAlbums';
 import Album from './components/Album/Album';
+import RenderPhoto from './components/Photo/RenderPhoto';
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
         <Route path='/user/:id' element={<UserAlbums />} />
         <Route path='/album/:id' element={<Album />} />
+        <Route path='/photo/:id' element={<RenderPhoto />} />
        </Routes>
     </div>
   );
