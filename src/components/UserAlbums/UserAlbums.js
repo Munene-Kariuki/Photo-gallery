@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Album.css';
 
-function Albums(props) {
+function UserAlbums(props) {
 
   const [selectedUser, setSelectedUser] = useState({});
   const [userAlbums, setUserAlbums] = useState([]);
@@ -62,4 +62,4 @@ function Albums(props) {
   )
 }
 
-export default Albums
+export default UserAlbums

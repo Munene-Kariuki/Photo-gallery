@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import Users from './components/UsersList/Users';
 import { useNavigate } from "react-router-dom";
-import Albums from './components/Albums/Albums';
+import UserAlbums from './components/UserAlbums/UserAlbums';
 
 function App() {
 
@@ -50,7 +50,7 @@ function App() {
        <Routes>
         <Route path='/' exact element={<Home handleSignOut={handleSignOut} />} />
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
-        <Route path='/user/:id' element={<Albums />} />
+        <Route path='/user/:id' element={<UserAlbums />} />
        </Routes>
     </div>
   );

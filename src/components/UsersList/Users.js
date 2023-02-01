@@ -21,7 +21,6 @@ function Users({user, handleSignOut}) {
       .catch(console.error);;
   }, []);
 
-  console.log(users)
 
   const renderUsers = users.map((user) => {
     return <User key={user.id} user={user} />
