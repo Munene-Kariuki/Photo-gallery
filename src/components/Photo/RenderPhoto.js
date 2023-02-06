@@ -3,12 +3,13 @@ import { useLocation } from 'react-router-dom';
 import './RenderPhoto.css';
 import UpdateForm from './UpdateForm';
 
-function RenderPhoto() {
+function RenderPhoto({}) {
 
   const [selectedPhoto, setSelectedPhoto] = useState({});
   const [update, setUpdate] = useState(false);
 
   const {state} = useLocation();
+
 
   //Fetch photo data
   useEffect(() => {
@@ -50,15 +51,12 @@ function RenderPhoto() {
       })})
       .then((res) => res.json())
       .then((data) => {console.log(data)})
-
-    
-
-    console.log(updatedPhoto)
+      setSelectedPhoto(updatedPhoto)
   }
 
   return (
     <div className='pic-card' >
-      <img src={selectedPhoto.url} alt='selected imag' />
+      <img src={selectedPhoto.url} alt='selected imag' className='updateImg' />
       <p className='text' >{selectedPhoto.title}</p>
       <i class="fa-solid fa-pen-to-square fa-2x edit" onClick={handleUpdate}  ></i>
       {update ? <UpdateForm photoTitle={selectedPhoto.title} handleFormUpdate={handleFormUpdate} /> : null }

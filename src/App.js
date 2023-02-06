@@ -12,6 +12,7 @@ import RenderPhoto from './components/Photo/RenderPhoto';
 function App() {
 
   const [user, setUser] = useState({});
+  const [photoWithUpdatedTitle, setPhotoWithUpdatedTitle] = useState({});
 
   const navigate = useNavigate()
 
@@ -45,7 +46,9 @@ function App() {
     
   }, [user]);
 
-  console.log(user)
+  console.log(user) 
+  
+  //
 
   return (
     <div>
@@ -54,7 +57,7 @@ function App() {
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
         <Route path='/user/:id' element={<UserAlbums />} />
         <Route path='/album/:id' element={<Album />} />
-        <Route path='/photo/:id' element={<RenderPhoto />} />
+        <Route path='/photo/:id' element={<RenderPhoto setPhotoWithUpdatedTitle={setPhotoWithUpdatedTitle} />} />
        </Routes>
     </div>
   );

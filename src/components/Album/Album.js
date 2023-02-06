@@ -8,6 +8,7 @@ function Album() {
   const [selectedAlbum, setSelectedAlbum] = useState({});
   const [albumPhotos, setAlbumPhotos] = useState([]);
 
+
   //get state to get selected album id
   const {state} = useLocation();
 
@@ -38,11 +39,11 @@ function Album() {
   
     //catch any errors
     fetchData()
-      .catch(console.error);;
+      .catch(console.error);
   }, []);
 
   const renderPhotos = albumPhotos.map((albumPhoto) => {
-    return <Photo key={albumPhoto.id} photo={albumPhoto} />
+    return <Photo key={albumPhoto.id} photo={albumPhoto} photos={albumPhotos} setAlbumPhotos={setAlbumPhotos} />
   });
 
   //Render photos in rows of 8
