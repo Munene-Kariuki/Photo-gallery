@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './RenderPhoto.css';
+import UpdateForm from './UpdateForm';
 
 function RenderPhoto() {
 
   const [selectedPhoto, setSelectedPhoto] = useState({});
+  const [update, setUpdate] = useState(false);
 
-  const {state} = useLocation()
-  console.log(state)
+  const {state} = useLocation();
 
   //Fetch photo data
   useEffect(() => {
@@ -22,12 +23,45 @@ function RenderPhoto() {
     //catch any errors
     fetchData()
       .catch(console.error);;
-  }, [state.id]);
+  }, []);
+
+
+  function handleUpdate() {
+    setUpdate(!update)
+  };
+
+  function handleFormUpdate(title) {
+    setUpdate(!update)
+    const updatedPhoto = {
+      albumId: selectedPhoto.albumId,
+      id: selectedPhoto.id,
+      title: title,
+      url: selectedPhoto.url,
+      thumbnailUrl: selectedPhoto.thumbnailUrl
+    }
+
+    fetch(`https://jsonplaceholder.typicode.com/photos/${selectedPhoto.id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        body: updatedPhoto,
+      })})
+      .then((res) => res.json())
+      .then((data) => {console.log(data)})
+
+    
+
+    console.log(updatedPhoto)
+  }
 
   return (
     <div className='pic-card' >
       <img src={selectedPhoto.url} alt='selected imag' />
       <p className='text' >{selectedPhoto.title}</p>
+      <i class="fa-solid fa-pen-to-square fa-2x edit" onClick={handleUpdate}  ></i>
+      {update ? <UpdateForm photoTitle={selectedPhoto.title} handleFormUpdate={handleFormUpdate} /> : null }
     </div>
   )
 }
