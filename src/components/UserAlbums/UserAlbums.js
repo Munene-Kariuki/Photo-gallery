@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Album.css';
 
-function UserAlbums() {
+function UserAlbums({handleSignOut}) {
 
   const [selectedUser, setSelectedUser] = useState({});
   const [userAlbums, setUserAlbums] = useState([]);
@@ -60,6 +60,7 @@ function UserAlbums() {
 
   return (
     <div className='albums'>
+      <button onClick={handleSignOut} className='sign-out'>Sign out</button>
       <h3>{selectedUser.username} albums</h3>
       <ol>
         {albumsList}

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Photo from './Photo';
 import './Photo.css';
 
-function Album({photoWithUpdatedTitle}) {
+function Album({photoWithUpdatedTitle, handleSignOut}) {
   
   const [selectedAlbum, setSelectedAlbum] = useState({});
   const [albumPhotos, setAlbumPhotos] = useState([]);
@@ -82,6 +82,7 @@ function Album({photoWithUpdatedTitle}) {
 
   return (
     <div>
+      <button onClick={handleSignOut} className='sign-out'>Sign out</button>
       <h2 className='header'>{selectedAlbum.title} photos</h2>
       {displayPhotos()}
     </div>

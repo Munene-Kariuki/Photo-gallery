@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import User from './User';
 import './user.css';
 
-function Users({user, handleSignOut}) {
+function Users({handleSignOut}) {
 
   const [users, setUsers] = useState([]);
 

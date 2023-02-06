@@ -1,13 +1,17 @@
-import React, {useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
+import { UserContext } from '../UserContext'
 import './Home.css'
 
-function Home() {
+function Home({handleSignOut}) {
+
+  const { user, setUser } = useContext(UserContext);
 
   return (
     <div className='home'>
       <div className='header'>
         <img src='https://parspng.com/wp-content/uploads/2022/10/camerapng.parspng.com-2.png' className='AppLogo' alt='Logo'  />
         <div id='signInDiv'></div>
+        {user ?  null: <button onClick={handleSignOut} className='sign-out'>Sign out</button> }
       </div>
       <div className='landing-page'>
         <div className='app-desc'>

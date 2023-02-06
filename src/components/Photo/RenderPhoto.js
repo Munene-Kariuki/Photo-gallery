@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './RenderPhoto.css';
 import UpdateForm from './UpdateForm';
 
-function RenderPhoto({setPhotoWithUpdatedTitle}) {
+function RenderPhoto({setPhotoWithUpdatedTitle, handleSignOut}) {
 
   const [selectedPhoto, setSelectedPhoto] = useState({});
   const [update, setUpdate] = useState(false);
@@ -58,11 +58,14 @@ function RenderPhoto({setPhotoWithUpdatedTitle}) {
   }
 
   return (
-    <div className='pic-card' >
-      <img src={selectedPhoto.url} alt='selected imag' className='updateImg' />
-      <p className='text' >{selectedPhoto.title}</p>
-      <i class="fa-solid fa-pen-to-square fa-2x edit" onClick={handleUpdate}  ></i>
-      {update ? <UpdateForm photoTitle={selectedPhoto.title} handleFormUpdate={handleFormUpdate} /> : null }
+    <div>
+      <button onClick={handleSignOut} className='sign-out'>Sign out</button>
+      <div className='pic-card' >
+        <img src={selectedPhoto.url} alt='selected imag' className='updateImg' />
+        <p className='text' >{selectedPhoto.title}</p>
+        <i class="fa-solid fa-pen-to-square fa-2x edit" onClick={handleUpdate}  ></i>
+        {update ? <UpdateForm photoTitle={selectedPhoto.title} handleFormUpdate={handleFormUpdate} /> : null }
+      </div>
     </div>
   )
 }
