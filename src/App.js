@@ -13,6 +13,7 @@ function App() {
 
   const [user, setUser] = useState({});
   const [photoWithUpdatedTitle, setPhotoWithUpdatedTitle] = useState({});
+  const [currentPhoto, setCurrentPhoto] = useState({});
 
   const navigate = useNavigate()
 
@@ -48,7 +49,6 @@ function App() {
 
   console.log(user) 
   
-  //
 
   return (
     <div>
@@ -56,7 +56,7 @@ function App() {
         <Route path='/' exact element={<Home handleSignOut={handleSignOut} />} />
         <Route path='/home' element={<Users user={user} setUser={setUser} handleSignOut={handleSignOut}  />} />
         <Route path='/user/:id' element={<UserAlbums />} />
-        <Route path='/album/:id' element={<Album />} />
+        <Route path='/album/:id' element={<Album photoWithUpdatedTitle={photoWithUpdatedTitle} />} />
         <Route path='/photo/:id' element={<RenderPhoto setPhotoWithUpdatedTitle={setPhotoWithUpdatedTitle} />} />
        </Routes>
     </div>

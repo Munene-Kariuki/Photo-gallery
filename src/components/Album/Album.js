@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import Photo from './Photo';
 import './Photo.css';
 
-function Album() {
-
+function Album({photoWithUpdatedTitle}) {
+  
   const [selectedAlbum, setSelectedAlbum] = useState({});
   const [albumPhotos, setAlbumPhotos] = useState([]);
 
@@ -49,18 +49,36 @@ function Album() {
   //Render photos in rows of 8
   //Mutates displaybooks into arrays of groups of 3
   function displayPhotos() {
-    let arr = []
-    let size = 8
+    let arr = [];
+    let size = 8;
 
     for(let i = 0; i < renderPhotos.length; i += size ) {
       arr.push(renderPhotos.slice(i, i + size))
     }
     const displayphotos = arr.map((photosRow) => {
       return <div className='photos'>{photosRow}</div>
-    })
+    });
 
     return displayphotos
   }
+
+  // //Update list of photos after update 
+  // if (Object.keys(photoWithUpdatedTitle).length != 0) {
+  //   const updatedList = albumPhotos.map((albumPhoto) => {
+  //     if (albumPhoto.id === photoWithUpdatedTitle.id) {
+  //       albumPhoto.title = photoWithUpdatedTitle.title
+  //     }
+  //     return albumPhoto
+  //   })
+  //   setAlbumPhotos(updatedList)
+  // }
+
+  
+
+  // console.log(photoWithUpdatedTitle)
+
+  
+  
 
   return (
     <div>

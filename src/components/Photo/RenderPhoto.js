@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './RenderPhoto.css';
 import UpdateForm from './UpdateForm';
 
-function RenderPhoto({}) {
+function RenderPhoto({setPhotoWithUpdatedTitle}) {
 
   const [selectedPhoto, setSelectedPhoto] = useState({});
   const [update, setUpdate] = useState(false);
 
   const {state} = useLocation();
+
+  const navigate = useNavigate();
 
 
   //Fetch photo data
@@ -51,7 +53,8 @@ function RenderPhoto({}) {
       })})
       .then((res) => res.json())
       .then((data) => {console.log(data)})
-      setSelectedPhoto(updatedPhoto)
+      setSelectedPhoto(updatedPhoto);
+      setPhotoWithUpdatedTitle(updatedPhoto);
   }
 
   return (
@@ -64,4 +67,4 @@ function RenderPhoto({}) {
   )
 }
 
-export default RenderPhoto
+export default RenderPhoto;
