@@ -17,6 +17,7 @@ function Home({handleSignOut}) {
         <div className='app-desc'>
           <p>Picturesque</p>
           <h1>A Flawless <br/> Moment.</h1>
+          <p>An app showing user albums and photos</p>
           <button className='contact'>Contact us &#8594;</button>
           <div className='best-images'>
             <h4>Our best work:</h4>
