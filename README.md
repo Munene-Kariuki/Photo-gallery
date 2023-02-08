@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# COVID-19 ANALYSIS SYSTEM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An application that shows a users photo albums and an albums photos. It also provides the user woth a method to update a photo title using a patch to the back-end and updates the front-end The app uses react for the front-end and fetches data from the typicode API.
 
-## Available Scripts
+#### By **Denis** created on, 20th November 2022
 
-In the project directory, you can run:
+## Screenshot
+   ![image](./src/images/app-screenshot.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Content
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Description](#description)
+- [Behavior of the website](#siteBehavior)
+- [Development and set up](#setUp)
+- [Prerequisites](#Prerequisites)
+- [Live link](#Live-Link)
+- [Technology Used](#technology-Used)
+- [Licence](#licence)
+- [Authors Info](#Authors-info)
 
-### `npm test`
+## Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+An application that shows user photo albums and an albums photos. The app uses react for the front-end and fetches data from the typicode API. The app also provides functionality to edit photo titles.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Behaviour of the website
+### View
++ The website is visually appealing.
++ This is a single page website.
++ Upon loading the application prompts the user to sign up using existing google accounts in the browser and maintains user sessions.
++ The app shows a list of users in the application and number of albums they each have in a table. On clicking a specific user it displays more details about the user.
++ The user albums page shows a list of all albums belonging to a particular user. Clicking an album renders all photos in the selected album in cards.
++ The album photos page renders an albums photos in cards showing the title and an image. Clicking a card allows one to edit the title of the photo.
++ The photo page allows a user to edit a photo's title.
++ A sign out button allows a user to leave the application and return to the home page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Development and Setup.
 
-### `npm run eject`
+### prerequisites
++ First clone the project to your computer. ```git clone <repo url>``` or move to where the app folder is.
++ Ensure you have text editor such as Vs code installed.
++ Extract the files and open them in the editor.
++ Run npm install to install dependencies.
++ Run npm start to run the react application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Live Link
+* The live link for the project is https://photo-gallery-ashy.vercel.app/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technology and Tools Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
++ HTML5
++ CSS5 - styling the application
++ React Js - logic of the application
+- Git - Version control
+- Vs code- Code editor
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Licence
+MIT License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copyright (c) [2023] [Denis Kariuki]
 
-### Code Splitting
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### Analyzing the Bundle Size
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author's info
+Linked in - [Denis Kariuki]
