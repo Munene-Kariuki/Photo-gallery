@@ -1,8 +1,8 @@
-# COVID-19 ANALYSIS SYSTEM
+# PHOTO GALLERY
 
 An application that shows a users photo albums and an albums photos. It also provides the user woth a method to update a photo title using a patch to the back-end and updates the front-end The app uses react for the front-end and fetches data from the typicode API.
 
-#### By **Denis** created on, 20th November 2022
+#### By **Denis** created on, 08th February 2023
 
 ## Screenshot
    ![image](./src/images/app-screenshot.png)
